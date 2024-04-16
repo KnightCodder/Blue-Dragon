@@ -8,5 +8,6 @@ void dataGenerator::setStartingRowNum(int newRow){
     }
 
     outputFile << newRow;
+    startingRowNum = newRow;
     outputFile.close();
 }

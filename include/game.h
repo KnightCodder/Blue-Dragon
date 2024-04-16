@@ -26,6 +26,8 @@ struct Position
         board.printBoard();
         std::cout << "move number : " << moveNum << "\neval : " << eval << "\nmove : " << move.first.print() << "_" << move.second.print() << std::endl;
     }
+
+    std::string toCSV();
 };
 
 class Game

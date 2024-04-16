@@ -13,9 +13,10 @@ class dataGenerator
     bool reading = false;
     bool writing = false;
 
-    int startingRowNum;
 
 public:
+    int startingRowNum;
+
     dataGenerator(std::string inputfilename, std::string outputfilename, std::string cachefilename, int startingrownum = DATA_FILE::latestRow)
     {
         inputFileName = inputfilename;
