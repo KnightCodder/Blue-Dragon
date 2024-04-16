@@ -287,4 +287,12 @@ namespace NOTATION
     const std::map<char, PIECE> charToPiece = {{'N', PIECE::KNIGHT},{'B', PIECE::BISHOP},{'R', PIECE::ROOK},{'Q', PIECE::QUEEN},{'K', PIECE::KING}};
 }
 
+namespace DATA_FILE
+{
+    const std::string defaultInputFileName = "data/games.csv";
+    const std::string defaultOutputFileName = "data/trainingData.csv";
+    const std::string defaultCacheFileName = "cache/startingRowNum.txt";
+    const int latestRow = -1;
+}
+
 #endif // DEFINATION_H_INCLUDED
