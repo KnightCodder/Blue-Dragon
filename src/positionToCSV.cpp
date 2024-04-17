@@ -1,4 +1,4 @@
-#include "game.h"
+#include "position.h"
 #include <sstream>
 
 std::string Position::toCSV()

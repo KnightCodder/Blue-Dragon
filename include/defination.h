@@ -54,12 +54,14 @@ namespace TURN
 
 enum class GameStatus
 {
+    NOT_SURE,
     STILL_GOING,
     DRAW,
     STALEMATE,
     INSUFFICIENT_MATERIAL,
     WHITE_WINS,
-    BLACK_WINS
+    BLACK_WINS,
+    ILLEGAL
 };
 
 enum class PIECE
