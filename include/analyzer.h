@@ -30,4 +30,6 @@ public:
     }
 
     Evaluation negamax(int depth, double alpha, double beta);
+
+    Move bestMove();
 };

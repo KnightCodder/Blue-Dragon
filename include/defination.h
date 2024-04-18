@@ -241,7 +241,7 @@ struct Move
     std::pair<INDEX,INDEX> move;
     PIECE promotionTo = PIECE::QUEEN;
 
-    Move (int t, std::pair<INDEX,INDEX> m, PIECE p)
+    Move (int t = 69, std::pair<INDEX,INDEX> m, PIECE p = PIECE::EMPTY)
     {
         type = t;
         move = m;
