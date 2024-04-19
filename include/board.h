@@ -308,6 +308,11 @@ public:
         return board == other.board;
     }
 
+    bool operator<(const Board &other) const
+    {
+        return board < other.board;
+    }
+
     Move notationsToIndex(std::string move);
 };
 

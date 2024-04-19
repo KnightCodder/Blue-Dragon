@@ -13,8 +13,12 @@ struct Piece
     watch watchers = {};
     watching watchingSquare = {};
 
-    operator==(const Piece &other) const{
+    bool operator==(const Piece &other) const{
         return pieceType == other.pieceType && color == other.color;
+    }
+
+    bool operator<(const Piece &other) const{
+        return (static_cast<int>(pieceType) * color < other.color * static_cast<int>(other.pieceType));
     }
 };
 

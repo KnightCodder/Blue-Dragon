@@ -32,6 +32,11 @@ struct Position
         return board == other.board;
     }
 
+    bool operator<(const Position &other) const
+    {
+        return board < other.board;
+    }
+
     std::string toCSV();
 };
 

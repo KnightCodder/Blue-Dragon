@@ -16,6 +16,8 @@ Move ANALYZE::bestMove()
     {
         for (auto move : currentMoves[types])
         {
+            std::cout << move.first.print() << "_" << move.second.print() << std::endl;
+
             currentPosition = rollBack;
             Move currentMove(types, move, PIECE::QUEEN);
             currentPosition.board.playMove(currentMove);

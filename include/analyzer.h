@@ -1,4 +1,6 @@
 #include "position.h"
+#include <stack>
+#include <limits>
 
 struct Evaluation
 {
@@ -15,17 +17,16 @@ struct Evaluation
 class ANALYZE
 {
 public:
-    Position* searchTree;
-    std::map<Position, int> ThreeFoldRepetition;
+    std::stack<Position> searchTree;
+    std::map<Position, int> ThreeFoldRepetition = {};
     Position currentPosition;
     int maxDepth;
-    std::pair<INDEX,INDEX> bestMove;
+    std::pair<INDEX,INDEX> bestmove;
     Evaluation evaluation;
 
     ANALYZE(std::string startingFen, int maxdepth)
     {
         maxDepth = maxdepth;
-        searchTree = new Position[maxDepth];
         currentPosition = Position(Board(startingFen));
     }
 

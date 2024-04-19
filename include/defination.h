@@ -82,7 +82,8 @@ struct INDEX
 
     INDEX (int _rank = SQUARE::empty, int _file = SQUARE::empty)
     {
-        if (_rank == SQUARE::empty && _file == SQUARE::empty)
+        if (_rank == SQUARE::empty || _file == SQUARE::empty)
+        // if (_rank == SQUARE::empty && _file == SQUARE::empty)
             return;
 
         setIndex(_rank, _file);
@@ -241,11 +242,16 @@ struct Move
     std::pair<INDEX,INDEX> move;
     PIECE promotionTo = PIECE::QUEEN;
 
-    Move (int t = 69, std::pair<INDEX,INDEX> m, PIECE p = PIECE::EMPTY)
+    Move (int t = 69, std::pair<INDEX,INDEX> m = {{0,0},{0,0}}, PIECE p = PIECE::EMPTY)
     {
         type = t;
         move = m;
         promotionTo = p;
+    }
+
+    void print()
+    {
+        std::cout << "type : " << type << " | move : " << move.first.print() << "_" << move.second.print() << std::endl;
     }
 };
 
