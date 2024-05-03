@@ -1,7 +1,7 @@
 #ifndef PIECE_H
 #define PIECE_H
 
-#include "defination.h"
+#include "basicDefination.h"
 
 struct Piece
 {
@@ -13,7 +13,7 @@ struct Piece
     watch watchers = {};
     watching watchingSquare = {};
 
-    bool operator==(const Piece &other) const{
+    operator==(const Piece &other) const{
         return pieceType == other.pieceType && color == other.color;
     }
 

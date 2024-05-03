@@ -6,13 +6,13 @@ int main()
 {
     compilingPieceVision();
 
-    std::string fen = "5rk1/5Npp/8/8/8/1Q6/8/6K1 w - - 0 1";
+    std::string startingFen = "3rr1k1/5ppp/8/8/8/8/4RPPP/4R1K1 w - - 0 1";
 
-    ANALYZE a(fen, 4);
+    ANALYZE a(startingFen, 6);
 
-    Move bestmove = a.bestMove();
+    Move bestMove = a.bestMove();
 
-    bestmove.print();
+    bestMove.print();
 
     return 0;
 }

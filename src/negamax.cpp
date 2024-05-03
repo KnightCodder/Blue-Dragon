@@ -51,7 +51,7 @@ Evaluation ANALYZE::negamax(int depth, double alpha, double beta)
             Evaluation score;
             if (types == MOVE::capturesIndex || types == MOVE::checksIndex)
             {
-                score = negamax(depth, -beta, -alpha);
+                score = negamax(depth - 1, -beta, -alpha);
             }
             else
             score = negamax(depth - 1, -beta, -alpha);

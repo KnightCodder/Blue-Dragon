@@ -15,13 +15,11 @@ public:
 
         for (unsigned int i = 0; i < PGN.length(); i++)
         {
-            // std::cout << "what" << std::endl;
             if (PGN[i] == ' ')
             {
                 i++;
                 while (PGN[i] != ' ')
                 {
-                    // std::cout << "what the fuck" << std::endl;
                     if (PGN[i] == '!' || PGN[i] == '?')
                     {
                         i++;
@@ -40,7 +38,6 @@ public:
             }
         }
 
-        // std::cout << pgncopy << std::endl;
 
         std::istringstream iss(pgncopy);
 

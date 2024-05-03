@@ -253,43 +253,6 @@ public:
 
     movesInSingleDirection pieceMoveGenerationDirection(INDEX index, direction dir);
 
-    void temp()
-    {
-        // for (auto i : board[index[0]][index[1]].watchingSquare)
-        // {
-        //     for (auto j : i.second)
-        //     {
-        //         std::cout << "dir : " << i.first[0] << "_" << i.first[1] << " | index : " << BOARD::indexToSquareName(j) << std::endl;
-        //     }
-        // }
-
-        for (int rank = 0; rank < 8; rank++)
-        {
-            for (int file = 0; file < 8; file++)
-            {
-                for (auto it : boardIndex(INDEX(rank, file))->watchingSquare)
-                {
-                    for (auto i : it.second)
-                    {
-                        std::cout << INDEX(rank, file).print() << " | index : " << i.print() << " | dir : " << it.first[0] << "_" << it.first[1] << std::endl;
-                    }
-                }
-            }
-        }
-        std::cout << std::endl;
-
-        for (int rank = 0; rank < 8; rank++)
-        {
-            for (int file = 0; file < 8; file++)
-            {
-                for (auto it : boardIndex(INDEX(rank, file))->watchers)
-                {
-                    std::cout << INDEX(rank, file).print() << " | index : " << it.first.print() << " | dir : " << it.second[0] << "_" << it.second[1] << std::endl;
-                }
-            }
-        }
-    }
-
     int attackers(INDEX index, int color)
     {
         int count = 0;
@@ -314,6 +277,32 @@ public:
     }
 
     Move notationsToIndex(std::string move);
+
+    Board copy() const {
+        Board temp;
+        
+        // Copy board
+        for (int i = 0; i < BOARD::ranks; ++i) {
+            for (int j = 0; j < BOARD::files; ++j) {
+                temp.board[i][j] = board[i][j];
+            }
+        }
+        
+        // Copy other members
+        temp.checks = checks;
+        temp.illegal = illegal;
+        for (int i = 0; i < BOARD::numOfCastlingRights; ++i) {
+            temp.castle[i] = castle[i];
+        }
+        temp.enpassent = enpassent;
+        temp.fiftyMoves = fiftyMoves;
+        temp.materialBalance = materialBalance;
+        temp.turn = turn;
+        temp.status = status;
+        temp.FEN = FEN;
+        
+        return temp;
+    }
 };
 
 #endif

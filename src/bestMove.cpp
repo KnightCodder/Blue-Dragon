@@ -16,12 +16,12 @@ Move ANALYZE::bestMove()
     {
         for (auto move : currentMoves[types])
         {
-            std::cout << move.first.print() << "_" << move.second.print() << std::endl;
 
             currentPosition = rollBack;
             Move currentMove(types, move, PIECE::QUEEN);
             currentPosition.board.playMove(currentMove);
             Evaluation score = negamax(maxDepth - 1, -beta, -alpha);
+            std::cout << move.first.print() << "_" << move.second.print() << " : " << score.eval << std::endl;
             score.eval *= -1;
 
             if (score.eval > best_score)

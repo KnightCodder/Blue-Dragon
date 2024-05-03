@@ -39,7 +39,7 @@ void dataGenerator::generateData(int startingrownum, int numOfRows)
 
             /********** code to store the training data *********/
             {
-
+                std::cout << currentRow << std::endl;
                 Game game(row[DATA_FILE::movesIndex]);
 
                 for (auto positions : game.game)

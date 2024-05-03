@@ -2,7 +2,7 @@
 CXX = g++
 
 # Compilation flags
-CXXFLAGS = -Iinclude -Wall -Wextra -g -std=c++17
+CXXFLAGS = -Iinclude -Iheader -Wall -Wextra -g -std=c++17
 
 # Source files directory
 SRC_DIR = src
