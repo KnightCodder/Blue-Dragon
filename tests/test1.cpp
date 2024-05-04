@@ -6,7 +6,7 @@ int main()
 {
     compilingPieceVision();
 
-    std::string startingFen = "3rr1k1/5ppp/8/8/8/8/4RPPP/4R1K1 w - - 0 1";
+    std::string startingFen = "r4Nk1/2q3p1/2p2r1p/2bp4/1p2Q1R1/1P5P/P5P1/4R2K w - - 2 36";
 
     ANALYZE a(startingFen, 6);
 
