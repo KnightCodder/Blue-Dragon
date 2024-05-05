@@ -1,0 +1,2 @@
+in release run the given exe file. or in terminal run the command `make createApp` to run the playWithAI.
+in terminal run `make` to run the test1.cpp
