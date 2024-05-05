@@ -11,6 +11,7 @@ Move ANALYZE::bestMove()
     Move best_move;
 
     Position rollBack = currentPosition;
+    isGameOver = true;
 
     for (int types = 0; types < MOVE::numOfPossibleTypesMoves; types++)
     {
@@ -19,9 +20,16 @@ Move ANALYZE::bestMove()
             currentPosition = rollBack;
             Move currentMove(types, move, PIECE::QUEEN);
             currentPosition.board.playMove(currentMove);
+            searchTree.push(currentPosition);
             Evaluation score = negamax(maxDepth - 1, -beta, -alpha);
+            searchTree.pop();
             score.eval *= -1;
-            std::cout << move.first.print() << "_" << move.second.print() << " : " << score.eval << std::endl;
+
+            if (score.status == GameStatus::ILLEGAL)
+                continue;
+            isGameOver = false;
+
+            // std::cout << move.first.print() << "_" << move.second.print() << " : " << score.eval << std::endl;
 
             if (score.eval > best_score)
             {
@@ -31,6 +39,9 @@ Move ANALYZE::bestMove()
             alpha = std::max(alpha, score.eval);
         }
     }
+
+
+    currentPosition = rollBack;
 
     return best_move;
 }

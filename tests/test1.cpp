@@ -6,13 +6,21 @@ int main()
 {
     compilingPieceVision();
 
-    std::string startingFen = "r4Nk1/2q3p1/2p2r1p/2bp4/1p2Q1R1/1P5P/P5P1/4R2K w - - 2 36";
+    std::string startingFen = "rnbqkbnr/ppp1pppp/8/3p4/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 0 2";
 
-    ANALYZE a(startingFen, 6);
+    // a.searchTree.push(a.currentPosition);
+    // a.negamax(a.maxDepth, -10, 5);
 
+    ANALYZE a(startingFen, 2);
     Move bestMove = a.bestMove();
-
     bestMove.print();
+
+    // Evaluator f;
+
+    // double evaluation = f.evaluate(Position(Board(startingFen), 2));
+
+    // std::cout << "eval : " << evaluation << std::endl;
+    // f.printModel();
 
     return 0;
 }

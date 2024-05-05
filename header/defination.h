@@ -8,6 +8,8 @@ namespace DATA_FILE
     const std::string defaultInputFileName = "data/games.csv";
     const std::string defaultOutputFileName = "data/trainingData.csv";
     const std::string defaultCacheFileName = "cache/startingRowNum.txt";
+    const std::string defaultModelDataFileName = "models/modelData.txt";
+
     const int latestRow = -1;
     const int movesIndex = 26;
     const int resultIndex = 32;

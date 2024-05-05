@@ -45,3 +45,10 @@ intercept_path = 'models/linear_regression_intercept.npy'
 np.save(coefficients_path, model.coef_)
 np.save(intercept_path, model.intercept_)
 
+modelDataFile = "models/modelData.txt"
+# Write coefficients and intercept to a text file
+with open(modelDataFile, 'w') as f:
+    f.write(' '.join(map(str, model.coef_)))
+    f.write(' ')
+    f.write(str(model.intercept_))
+    

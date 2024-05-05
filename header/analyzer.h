@@ -1,5 +1,4 @@
-#include "position.h"
-#include "defination.h"
+#include "evaluator.h"
 #include <stack>
 #include <limits>
 
@@ -24,6 +23,7 @@ public:
     int maxDepth;
     std::pair<INDEX,INDEX> bestmove;
     Evaluation evaluation;
+    bool isGameOver = true;
 
     ANALYZE(std::string startingFen, int maxdepth)
     {
@@ -34,4 +34,15 @@ public:
     Evaluation negamax(int depth, double alpha, double beta);
 
     Move bestMove();
+
+    void playMove(Move move)
+    {
+        currentPosition.board.playMove(move);
+
+        if (currentPosition.board.turn == TURN::black)
+            currentPosition.moveNum++;
+
+        searchTree.push(currentPosition);
+        ThreeFoldRepetition[currentPosition]++;
+    }
 };
