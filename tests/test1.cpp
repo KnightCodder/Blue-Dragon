@@ -1,4 +1,5 @@
 #include "analyzer.h"
+#include "dataGenerator.h"
 
 void compilingPieceVision();
 
@@ -6,21 +7,15 @@ int main()
 {
     compilingPieceVision();
 
-    std::string startingFen = "rnbqkbnr/ppp1pppp/8/3p4/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 0 2";
+    // dataGenerator a(DATA_FILE::defaultInputFileName, DATA_FILE::defaultOutputFileName, DATA_FILE::defaultCacheFileName);
+    // a.generateData(a.startingRowNum, 1000);
 
-    // a.searchTree.push(a.currentPosition);
-    // a.negamax(a.maxDepth, -10, 5);
 
-    ANALYZE a(startingFen, 2);
-    Move bestMove = a.bestMove();
-    bestMove.print();
+    ANALYZE a("2r2rk1/p2q1pp1/4p2p/3p1b2/1p1P3P/5N2/QP3PP1/3N2KR w - - 0 21", 2);
 
-    // Evaluator f;
+    Move f = a.bestMove();
 
-    // double evaluation = f.evaluate(Position(Board(startingFen), 2));
-
-    // std::cout << "eval : " << evaluation << std::endl;
-    // f.printModel();
+    f.print();
 
     return 0;
 }

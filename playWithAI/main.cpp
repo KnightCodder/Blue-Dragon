@@ -14,7 +14,8 @@ int main()
     if (cache == "y" || cache == "Y")
     {
         std::cout << "\nenter FEN : ";
-        std::cin >> startingFen;
+        std::cin.ignore();
+        std::getline(std::cin, startingFen);
     }
 
     int turn = TURN::white;
